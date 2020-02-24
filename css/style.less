@@ -1,8 +1,10 @@
 @import "default.less";
+@import "animation.less";
 
-@anim: 0.3s ease-in-out;
+@anim: 0.3s ease-out;
 .wrapper {
   overflow: hidden;
+  padding-bottom: 350px;
 }
 .header {
   width: 100%;
@@ -60,6 +62,9 @@
   }
 }
 .page {
+  position: relative;
+  z-index: 10;
+  background: white;
   .banner {
     position: relative;
     display: flex;
@@ -121,16 +126,18 @@
       position: absolute;
       right: 40px;
       bottom: 30px;
+      animation: bounce 4s;
+      animation-direction: normal;
+      animation-iteration-count: infinite;
     }
   }
   .angleBlock {
-    padding: 30px 50px;
-    position: relative;
-    margin: 50px auto 100px auto;
+    margin: 0 auto 100px auto;
+    padding-top: 50px;
     max-width: 710px;
-    text-align: center;
     &.while {
-      h2,p{
+      h2,
+      p {
         color: white;
       }
       .angleBlock-right,
@@ -165,6 +172,11 @@
         left: 0;
         top: 0;
       }
+    }
+    &-content {
+      padding: 30px 50px;
+      position: relative;
+      text-align: center;
     }
     &-right {
       .angle;
@@ -236,8 +248,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 1000px;
-    //overflow: hidden;
     position: relative;
     &-img {
       width: 100%;
@@ -247,14 +257,257 @@
       background-image: url(../images/fullImg.jpg);
       background-repeat: no-repeat;
       background-size: cover;
-       
     }
-    .angleBlock{
-        margin-bottom: 0;
+    .angleBlock {
+      margin-bottom: 0;
     }
-    .plus{
-        margin:0 auto;
-        margin-top: 10px;
+    .plus {
+      margin: 0 auto;
+      margin-top: 10px;
+    }
+  }
+  .news {
+    padding-bottom: 100px;
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    &-item {
+      width: ~"calc((100% - 80px)/3)";
+      &-img {
+        margin-bottom: 30px;
+        background: rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+        img {
+          position: absolute;
+          width: 100%;
+          height: auto;
+          z-index: -1;
+          left: 0;
+          top: 0;
+        }
+      }
+      &-title {
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 130%;
+        color: #000000;
+
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      &-date {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 130%;
+        color: #1b1b1b;
+        display: flex;
+        align-items: center;
+        margin-bottom: 35px;
+      }
+      &-link {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 130%;
+        /* or 19px */
+
+        display: flex;
+        align-items: center;
+
+        color: #363636;
+      }
+    }
+    .plus {
+      margin: auto;
+    }
+  }
+  .goto-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #363636;
+    right: 25px;
+    bottom: 14px;
+    position: fixed;
+    border-radius: 21px;
+    transition: @anim;
+    opacity: 0;
+    pointer-events: none;
+    &.show{
+      opacity: 1;
+      pointer-events: auto;
+    }
+    &:before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 5px;
+      transition: @anim;
+      background: #ffffff;
+    }
+    &:hover {
+      height: 70px;
+      background: #1b1b1b;
+      &:before {
+        height: 13px;
+      }
+    }
+  }
+}
+.footer {
+  padding-top: 40px;
+  background: #282928;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  .row {
+    display: flex;
+    margin-left: -15px;
+    margin-right: -15px;
+    .col {
+      flex-basis: ~"calc(100% /3)";
+      padding: 0 15px;
+    }
+  }
+  &-title {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  p {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 130%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    a {
+      transition: @anim;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+  &-input {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 130%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    height: 47px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #c4c4c4;
+    width: 100%;
+    margin-bottom: 14px;
+    outline: none;
+  }
+  &-button {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 130%;
+    color: #000000;
+    /* or 14px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.125em;
+    text-transform: uppercase;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    padding: 0 25px;
+    height: 27px;
+    cursor: pointer;
+    transition: @anim;
+    &:hover {
+      background: #363636;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+    }
+  }
+  &-down {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 130%;
+    color: #ffffff;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    background: #363636;
+    height: 68px;
+  }
+  &-pp {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 130%;
+    color: #ffffff;
+    /* or 17px */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    a {
+      transition: @anim;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+  &-social {
+    display: flex;
+    align-items: flex-end;
+    margin-left: -5px;
+    margin-right: -5px;
+    &-item {
+      margin: 0 5px;
+      display: block;
+      transition: @anim;
+      &:hover {
+        opacity: 0.6;
+      }
     }
   }
 }

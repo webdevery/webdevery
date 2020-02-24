@@ -65,11 +65,30 @@ var custom = {
             this.events();
         },
     },
+    gotoUp:{
+        doing:function(scrollTop){
+            if(scrollTop>$(window).height()){
+                $('.goto-up').addClass('show')
+            }else{
+                $('.goto-up').removeClass('show')
+            }
+        },
+        events:function(){
+            var _ = this;
+            $(document).on('scroll',function(){
+                _.doing($(document).scrollTop());
+            })
+        },
+        init:function(){
+            this.events();
+            this.doing($(document).scrollTop());
+        }
+    },
     init:function(){
         if($('.banner').length>0) this.banner.init();
         if($('.tools').length>0) this.sliderTools.init();
         if($('.fullImg-img').length>0) this.fullImg.init();
-        
+        if($('.goto-up').length>0) this.gotoUp.init();
     }
 }
 

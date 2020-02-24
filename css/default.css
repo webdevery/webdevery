@@ -57,6 +57,15 @@ body a {
   text-decoration: none;
   color: inherit;
 }
+.wrapper .content {
+  width: 1200px;
+  margin: auto;
+}
+@media (max-width: 1300px) {
+  .wrapper .content {
+    width: 1100px;
+  }
+}
 .wrapper .icon .def {
   display: inline-block;
   background-size: contain;
@@ -71,6 +80,42 @@ body a {
   width: 42px;
   height: 42px;
   background-image: url(../images/str-down.svg);
+}
+.wrapper .icon-str-up {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 15px;
+  height: 8px;
+  background-image: url(../images/str-up.svg);
+}
+.wrapper .icon-fb {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 13px;
+  height: 25px;
+  background-image: url(../images/fb.svg);
+}
+.wrapper .icon-vk {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 17px;
+  width: 30px;
+  background-image: url(../images/vk.svg);
+}
+.wrapper .icon-telegramm {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 23px;
+  height: 19px;
+  background-image: url(../images/telegramm.svg);
 }
 .wrapper .plus {
   width: 37px;
@@ -90,6 +135,10 @@ body a {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: all 0.3s;
+}
+.wrapper .plus:hover:before {
+  transform: rotate(90deg);
 }
 .wrapper h2 {
   font-style: normal;
