@@ -8,7 +8,7 @@ var custom = {
             var _ = this;
             $(document).on('scroll',function(){
                 window.pJSDom.forEach(function(item,key){
-                    if($(document).scrollTop()*2 > $('.banner-bg').height()){
+                    if($(document).scrollTop() > $('.banner-bg').height()){
                         item.pJS.particles.move.enable = false
                     }else if(!item.pJS.particles.move.enable){
                         item.pJS.particles.move.enable = true;
