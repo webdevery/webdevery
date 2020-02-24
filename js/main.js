@@ -3,6 +3,22 @@ $(document).ready(function(){
 })
 
 var custom = {
+    header:{
+        doing:function(){
+            if($(document).scrollTop()>50){
+                $('.header').addClass('scroll')
+            }else{
+                $('.header').removeClass('scroll')
+            }
+        },
+        init:function(){
+            var _ = this;
+            $(document).on('scroll',function(){
+                _.doing();
+            })
+            _.doing();
+        }
+    },
     banner:{
         events:function(){
             var _ = this;
@@ -85,6 +101,7 @@ var custom = {
         }
     },
     init:function(){
+        this.header.init();
         if($('.banner').length>0) this.banner.init();
         if($('.tools').length>0) this.sliderTools.init();
         if($('.fullImg-img').length>0) this.fullImg.init();
