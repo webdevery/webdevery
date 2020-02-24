@@ -1,1 +1,128 @@
 @import "default.less";
+
+@anim: 0.3s ease-in-out;
+.wrapper {
+  overflow: hidden;
+}
+.header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 50px;
+  background: rgba(40, 41, 40, 0.6);
+  z-index: 2000;
+  &.black {
+  }
+  &-menu {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    .menu {
+      &-item {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 18px;
+        color: #ffffff;
+        text-align: center;
+        letter-spacing: 0.075em;
+        text-transform: uppercase;
+
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 14px;
+        transition: @anim;
+        &:hover {
+          color: #999;
+        }
+      }
+    }
+  }
+  .logo {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: #ffffff;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 46px;
+  }
+}
+.page {
+  .banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 185px;
+    &-bg {
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.47);
+      .up,
+      .down {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+      .down {
+        z-index: -1;
+        filter: blur(2px);
+      }
+    }
+    &-content {
+      padding-left: 60px;
+      user-select: none;
+      h1 {
+        margin: 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 50px;
+        line-height: 59px;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin-bottom: 60px;
+        max-width: 730px;
+      }
+      p {
+        margin: 0;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        color: #ffffff;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        max-width: 330px;
+      }
+    }
+    .goto-down{
+        position: absolute;
+        right: 40px;
+        bottom: 30px;
+    }
+  }
+  .angleBlock{
+      h1{
+          
+      }
+  }
+}
