@@ -100,12 +100,39 @@ var custom = {
             this.doing($(document).scrollTop());
         }
     },
+    portfolioImgsSliders:{
+        createSlider:function(){
+            $('.portfolio-img-layers').each(function(){
+                if($(this).find('.swiper-slide').length>3){
+                    mySwiper = new Swiper(this, {
+                        lazyLoading:true,
+                        speed: 500,
+                        spaceBetween: 0,
+                        slidesPerView:3,
+                        setWrapperSize:true,
+                        //slidesPerGroup: 4,
+                        loop: false,
+                        centeredSlides:true,
+                        //loopFillGroupWithBlank: true,
+                        /* pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        }, */
+                    });
+                }
+            })
+        },
+        init:function(){
+            //this.createSlider();
+        },
+    },
     init:function(){
         this.header.init();
         if($('.banner').length>0) this.banner.init();
         if($('.tools').length>0) this.sliderTools.init();
         if($('.fullImg-img').length>0) this.fullImg.init();
         if($('.goto-up').length>0) this.gotoUp.init();
+        if($('.portfolio-img-layers').length>0) this.portfolioImgsSliders.init();
     }
 }
 

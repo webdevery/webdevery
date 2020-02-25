@@ -6,6 +6,7 @@
     url("../fonts/opensanslight.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Open Sans";
@@ -15,6 +16,7 @@
     url("../fonts/opensanslightitalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: "Open Sans";
@@ -24,6 +26,7 @@
     url("../fonts/opensans.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Open Sans";
@@ -33,6 +36,7 @@
     url("../fonts/opensansitalic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: "Open Sans";
@@ -42,6 +46,7 @@
     url("../fonts/opensanssemibold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Raleway";
@@ -49,13 +54,13 @@
     url("../fonts/Raleway.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 html,
 body {
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: border-box;
   //scroll-behavior: smooth;
   h1,h2{
     font-family: "Raleway";
@@ -63,6 +68,7 @@ body {
   *{
     font-family: "Open Sans";
     color: #363636;
+    box-sizing: border-box;
   }
   a{
     text-decoration: none;
@@ -118,6 +124,8 @@ body {
   .plus{
     width: 37px;
     height: 37px;
+    min-width: 37px;
+    min-height: 37px;
     background: #363636;
     display: flex;
     justify-content: center;
@@ -144,7 +152,7 @@ body {
     font-style: normal;
     font-weight: normal;
     font-size: 35px;
-    line-height: 41px;
+    line-height: 135%;
     text-transform: uppercase;
     color: #363636;
   }
