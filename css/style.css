@@ -135,7 +135,7 @@ body a {
   border-radius: 50%;
 }
 .wrapper .plus::before {
-  content: '';
+  content: "";
   width: 15px;
   height: 15px;
   display: block;
@@ -155,6 +155,9 @@ body a {
   line-height: 135%;
   text-transform: uppercase;
   color: #363636;
+}
+.fancybox-container .fancybox-button svg path {
+  fill: #fff;
 }
 @keyframes bounce {
   20%,
