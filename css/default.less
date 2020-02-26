@@ -50,9 +50,61 @@
 }
 @font-face {
   font-family: "Raleway";
-  src: local("Raleway"), local("Raleway"),
-    url("../fonts/Raleway.ttf") format("truetype");
+  src: local("Raleway Bold"), local("Raleway Bold"),
+    url("../fonts/ralewaybold.woff2") format("woff2"),
+    url("../fonts/ralewaybold.woff") format("woff"),
+    url("../fonts/ralewaybold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Light"), local("Raleway Light"),
+    url("../fonts/ralewaylight.woff2") format("woff2"),
+    url("../fonts/ralewaylight.woff") format("woff"),
+    url("../fonts/ralewaylight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Medium"), local("Raleway Medium"),
+    url("../fonts/ralewaymedium.woff2") format("woff2"),
+    url("../fonts/ralewaymedium.woff") format("woff"),
+    url("../fonts/ralewaymedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Regular"), local("Raleway Regular"),
+    url("../fonts/ralewayregular.woff2") format("woff2"),
+    url("../fonts/ralewayregular.woff") format("woff"),
+    url("../fonts/ralewayregular.ttf") format("truetype");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Semibold"), local("Raleway Semibold"),
+    url("../fonts/ralewaysemibold.woff2") format("woff2"),
+    url("../fonts/ralewaysemibold.woff") format("woff"),
+    url("../fonts/ralewaysemibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Thin"), local("Raleway Thin"),
+    url("../fonts/ralewaythin.woff2") format("woff2"),
+    url("../fonts/ralewaythin.woff") format("woff"),
+    url("../fonts/ralewaythin.ttf") format("truetype");
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
@@ -97,6 +149,12 @@ body {
       height: 42px;
       background-image: url(../images/str-down.svg);
     }
+    &-str-r-white {
+      .def;
+      width: 25px;
+      height: 8px;
+      background-image: url(../images/str-right-white.svg);
+    }
     &-str-up {
       .def;
       width: 15px;
@@ -123,31 +181,60 @@ body {
     }
   }
   .plus {
-    width: 37px;
-    height: 37px;
-    min-width: 37px;
-    min-height: 37px;
-    background: #363636;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    &::before {
-      content: "";
-      width: 15px;
-      height: 15px;
-      display: block;
-      background-image: url(../images/plus.svg);
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
+    .def-plus(@bg) {
+      width: 37px;
+      height: 37px;
+      min-width: 37px;
+      min-height: 37px;
+      background: @bg;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 2px solid @bg;
       transition: all 0.3s;
-    }
-    &:hover {
-      &:before {
-        transform: rotate(90deg);
+      &::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        display: block;
+        background-image: url(../images/plus.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition: all 0.3s;
+      }
+      &:hover {
+        border: 2px solid #FFFFFF;
+        &:before {
+          transform: rotate(90deg);
+        }
       }
     }
+    .def-plus(#363636);
+    &-blue {
+      .def-plus(#099acc);
+    }
+  }
+  .btn{
+    .def-but(@bg,@border_c){
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      text-align: center;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      line-height: 60px;
+      margin-top: 60px;
+      display: inline-flex;
+      align-items: center;
+      background: @bg;
+      border: 2px solid @border_c;
+      padding: 0 40px;
+    }
+    .def-but(#282928,#099ACC);
   }
   h2 {
     font-style: normal;
@@ -159,7 +246,7 @@ body {
   }
 }
 .fancybox-container {
-  .fancybox{
+  .fancybox {
     &-button {
       svg {
         path {
@@ -168,5 +255,4 @@ body {
       }
     }
   }
-  
 }

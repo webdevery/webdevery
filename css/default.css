@@ -35,8 +35,43 @@
 }
 @font-face {
   font-family: "Raleway";
-  src: local("Raleway"), local("Raleway"), url("../fonts/Raleway.ttf") format("truetype");
+  src: local("Raleway Bold"), local("Raleway Bold"), url("../fonts/ralewaybold.woff2") format("woff2"), url("../fonts/ralewaybold.woff") format("woff"), url("../fonts/ralewaybold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Light"), local("Raleway Light"), url("../fonts/ralewaylight.woff2") format("woff2"), url("../fonts/ralewaylight.woff") format("woff"), url("../fonts/ralewaylight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Medium"), local("Raleway Medium"), url("../fonts/ralewaymedium.woff2") format("woff2"), url("../fonts/ralewaymedium.woff") format("woff"), url("../fonts/ralewaymedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Regular"), local("Raleway Regular"), url("../fonts/ralewayregular.woff2") format("woff2"), url("../fonts/ralewayregular.woff") format("woff"), url("../fonts/ralewayregular.ttf") format("truetype");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Semibold"), local("Raleway Semibold"), url("../fonts/ralewaysemibold.woff2") format("woff2"), url("../fonts/ralewaysemibold.woff") format("woff"), url("../fonts/ralewaysemibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Thin"), local("Raleway Thin"), url("../fonts/ralewaythin.woff2") format("woff2"), url("../fonts/ralewaythin.woff") format("woff"), url("../fonts/ralewaythin.ttf") format("truetype");
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
@@ -87,6 +122,15 @@ body a {
   height: 42px;
   background-image: url(../images/str-down.svg);
 }
+.wrapper .icon-str-r-white {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 25px;
+  height: 8px;
+  background-image: url(../images/str-right-white.svg);
+}
 .wrapper .icon-str-up {
   display: inline-block;
   background-size: contain;
@@ -133,6 +177,8 @@ body a {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  border: 2px solid #363636;
+  transition: all 0.3s;
 }
 .wrapper .plus::before {
   content: "";
@@ -145,8 +191,58 @@ body a {
   background-position: center;
   transition: all 0.3s;
 }
+.wrapper .plus:hover {
+  border: 2px solid #FFFFFF;
+}
 .wrapper .plus:hover:before {
   transform: rotate(90deg);
+}
+.wrapper .plus-blue {
+  width: 37px;
+  height: 37px;
+  min-width: 37px;
+  min-height: 37px;
+  background: #099acc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #099acc;
+  transition: all 0.3s;
+}
+.wrapper .plus-blue::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  display: block;
+  background-image: url(../images/plus.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: all 0.3s;
+}
+.wrapper .plus-blue:hover {
+  border: 2px solid #FFFFFF;
+}
+.wrapper .plus-blue:hover:before {
+  transform: rotate(90deg);
+}
+.wrapper .btn {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  line-height: 60px;
+  margin-top: 60px;
+  display: inline-flex;
+  align-items: center;
+  background: #282928;
+  border: 2px solid #099ACC;
+  padding: 0 40px;
 }
 .wrapper h2 {
   font-style: normal;

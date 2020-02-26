@@ -100,9 +100,27 @@ var custom = {
             this.doing($(document).scrollTop());
         }
     },
-    portfolioImgsZoom:{
-        init:function(){
+    portfolioImgs:{
+        zomm:function(){
             $(".portfolio-img-layers .layer").fancybox();
+        },
+        scrolled:function(){
+            $(document).on('scroll',function(){
+                var scroll = $(document).scrollTop();
+                var height = $(window).height();
+                $(".portfolio-item").each(function(){
+                    var top = $(this).offset().top;
+                    if(scroll + height/2 > top && scroll>50){
+                        $(this).addClass('showed')
+                    }else{
+                        $(this).removeClass('showed')
+                    }
+                })
+            })
+        },
+        init:function(){
+           this.zomm();
+           this.scrolled();
         },
     },
     init:function(){
@@ -111,7 +129,7 @@ var custom = {
         if($('.tools').length>0) this.sliderTools.init();
         if($('.fullImg-img').length>0) this.fullImg.init();
         if($('.goto-up').length>0) this.gotoUp.init();
-        if($('.portfolio-img-layers .layer').length>0) this.portfolioImgsZoom.init();
+        if($('.portfolio-img-layers .layer').length>0) this.portfolioImgs.init();
     }
 }
 
