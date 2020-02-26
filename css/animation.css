@@ -20,3 +20,11 @@
     transform: translate3d(0, -4px, 0);
   }
 }
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(6px);
+  }
+}

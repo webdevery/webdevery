@@ -85,8 +85,11 @@ var custom = {
         doing:function(scrollTop){
             if(scrollTop>$(window).height()){
                 $('.goto-up').addClass('show')
+                $('.goto-down').addClass('hide')
+                
             }else{
                 $('.goto-up').removeClass('show')
+                $('.goto-down').removeClass('hide')
             }
         },
         events:function(){

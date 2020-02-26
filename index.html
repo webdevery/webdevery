@@ -2,25 +2,29 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="favicon.jpg" type="image/jpeg">
+    <link rel="shortcut icon" href="favicon.jpg" type="image/jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebDevery - Digital Production</title>
     <link rel="stylesheet" href="libs/swiper/swiper.min.css" />
-    <link rel="stylesheet" href="libs/fancybox/fancybox.min.css">
+    <link rel="stylesheet" href="libs/fancybox/fancybox.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="wrapper">
-      <div class="header black" >
+      <div class="header">
         <div class="header-menu">
-          <a href="workers.html" class="menu-item">Наша команда</a>
-          <a href="portfolio.html" class="menu-item">портфолио</a>
-          <a href="/"  class="logo">
+          <div class="header-menu-left">
+            <a href="workers.html" class="menu-item">Наша команда</a>
+            <a href="portfolio.html" class="menu-item">портфолио</a>
+          </div>
+          <a href="/" class="logo">
             <!-- <span class="logo-text">WebDevery</span> -->
             <span class="logo-img"></span>
           </a>
-          <a href="news.html" class="menu-item">публикации</a>
-          <a href="contacts.html" class="menu-item">Контакты</a>
+          <div class="header-menu-right">
+            <a href="news.html" class="menu-item">публикации</a>
+            <a href="contacts.html" class="menu-item">Контакты</a>
+          </div>
         </div>
       </div>
       <div class="page" id="page">
@@ -31,7 +35,8 @@
           </div>
           <div class="banner-content">
             <h1>
-              Мы digital production <br> с фокусом на разработку web сайтов
+              Мы digital production <br />
+              с фокусом на разработку web сайтов
             </h1>
             <p>
               Используем лучшие веб инструменты для реализации современных
@@ -41,9 +46,12 @@
               Заказать сайт <i class="icon-str-r-white"></i>
             </a>
           </div>
-          <a href="#second-block" class="goto-down"
-            ><i class="icon-str-down"></i
-          ></a>
+          <div class="goto-down">
+            <svg width="21" height="35" viewBox="0 0 21 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.4728 0C4.796 0 0.177734 4.61826 0.177734 10.295V24.705C0.177734 30.3817 4.796 35 10.4728 35C16.1495 35 20.7678 30.3817 20.7678 24.705V10.295C20.7678 4.61826 16.1495 0 10.4728 0ZM18.6679 24.705C18.6679 29.2236 14.9914 32.9001 10.4728 32.9001C5.9541 32.9001 2.27765 29.2236 2.27765 24.705V10.295C2.27765 5.77637 5.9541 2.09991 10.4728 2.09991C14.9914 2.09991 18.6679 5.77637 18.6679 10.295V24.705Z" fill="white"/>
+              <path id="whell" d="M10.4731 6.96252C9.89307 6.96252 9.4231 7.4325 9.4231 8.01248V12.8452C9.4231 13.4249 9.89307 13.8951 10.4731 13.8951C11.0528 13.8951 11.523 13.4249 11.523 12.8452V8.01248C11.523 7.4325 11.053 6.96252 10.4731 6.96252Z" fill="white"/>
+              </svg>
+            </div>
         </div>
         <div class="doing">
           <div class="doing-text">
@@ -51,11 +59,9 @@
               Что мы делаем
             </h2>
             <p>
-              Нужно придумать нормальный текст. Типа комплексного продвижения Вашего бизнеса. Но это уже заезжено
+              Нужно придумать нормальный текст. Типа комплексного продвижения
+              Вашего бизнеса. Но это уже заезжено
             </p>
-            <a href="">
-              Услуг или больше?
-            </a>
           </div>
           <div class="doing-list">
             <a href="" class="doing-item">
