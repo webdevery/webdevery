@@ -145,8 +145,8 @@ body a {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  width: 13px;
-  height: 25px;
+  width: 10px;
+  height: 16px;
   background-image: url(../images/fb.svg);
 }
 .wrapper .icon-vk {
@@ -154,8 +154,8 @@ body a {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 17px;
-  width: 30px;
+  height: 10px;
+  width: 16px;
   background-image: url(../images/vk.svg);
 }
 .wrapper .icon-telegramm {
@@ -163,8 +163,8 @@ body a {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  width: 23px;
-  height: 19px;
+  width: 16px;
+  height: 14px;
   background-image: url(../images/telegramm.svg);
 }
 .wrapper .plus {
@@ -192,7 +192,7 @@ body a {
   transition: all 0.3s;
 }
 .wrapper .plus:hover {
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
 }
 .wrapper .plus:hover:before {
   transform: rotate(90deg);
@@ -202,12 +202,12 @@ body a {
   height: 37px;
   min-width: 37px;
   min-height: 37px;
-  background: #099acc;
+  background: #099ACC;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: 2px solid #099acc;
+  border: 2px solid #099ACC;
   transition: all 0.3s;
 }
 .wrapper .plus-blue::before {
@@ -222,7 +222,7 @@ body a {
   transition: all 0.3s;
 }
 .wrapper .plus-blue:hover {
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
 }
 .wrapper .plus-blue:hover:before {
   transform: rotate(90deg);
@@ -235,7 +235,7 @@ body a {
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 60px;
   margin-top: 60px;
   display: inline-flex;
@@ -243,6 +243,49 @@ body a {
   background: #282928;
   border: 2px solid #099ACC;
   padding: 0 40px;
+}
+.wrapper .btn:hover:after {
+  transform: translateX(10px);
+}
+.wrapper .btn:after {
+  content: "";
+  transition: all 0.3s;
+  margin-left: 20px;
+  width: 25px;
+  height: 8px;
+  background-image: url(../images/str-right-white.svg);
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.wrapper .btn-plus-text {
+  display: inline-flex;
+  align-items: center;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  transition: color 0.3s;
+}
+.wrapper .btn-plus-text.black {
+  color: #282928;
+}
+.wrapper .btn-plus-text span {
+  margin-right: 20px;
+}
+.wrapper .btn-plus-text:hover {
+  color: #099ACC;
+}
+.wrapper .btn-plus-text:hover .plus-blue {
+  border: 2px solid #ffffff;
+}
+.wrapper .btn-plus-text:hover .plus-blue:before {
+  transform: rotate(90deg);
 }
 .wrapper h2 {
   font-style: normal;

@@ -106,6 +106,7 @@ var custom = {
     portfolioImgs:{
         zomm:function(){
             $(".portfolio-img-layers .layer").fancybox();
+            $(".present-layers .layer-box").fancybox();
         },
         scrolled:function(){
             $(document).on('scroll',function(){
@@ -132,7 +133,7 @@ var custom = {
         if($('.tools').length>0) this.sliderTools.init();
         if($('.fullImg-img').length>0) this.fullImg.init();
         if($('.goto-up').length>0) this.gotoUp.init();
-        if($('.portfolio-img-layers .layer').length>0) this.portfolioImgs.init();
+        if($('.layer').length>0) this.portfolioImgs.init();
     }
 }
 
