@@ -11,12 +11,20 @@ var custom = {
         $(".header").removeClass("scroll");
       }
     },
-    init: function() {
+    events:function(){
       var _ = this;
       $(document).on("scroll", function() {
         _.doing();
       });
-      _.doing();
+      $(document).on('click','.header-burger-btn',function(e){
+        e.preventDefault();
+        $('body').toggleClass('overflow')
+        $('.header-burger').toggleClass('active')
+      })
+    },
+    init: function() {
+      this.events();
+      this.doing();
     }
   },
   banner: {
@@ -180,8 +188,10 @@ var custom = {
           delete window.pJSDom[window.pJSDom.length - 1];
           delete window.pJSDom[window.pJSDom.length - 1];
         }
-        particlesJS("modal-canvas-down", getConfig("modal", "down"));
-        particlesJS("modal-canvas-up", getConfig("modal"));
+        if($(window).width()>950){
+          particlesJS("modal-canvas-down", getConfig("modal", "down"));
+          particlesJS("modal-canvas-up", getConfig("modal"));
+        }
       });
     },
     init: function() {

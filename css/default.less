@@ -119,6 +119,33 @@ body {
   padding: 0;
   border: 0;
   //scroll-behavior: smooth;
+  &.overflow {
+    overflow: hidden;
+  }
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  &::-webkit-scrollbar-button {
+    background-color:  @black;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: @gray;
+  }
+  &::-webkit-scrollbar-track-piece {
+    background-color: @black;
+  }
+  &::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: @blue;
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar-corner {
+    background-color:  @black;
+  }
+  &::-webkit-resizer {
+    background-color:  @black;
+  }
 }
 html {
   font-size: 16px;
@@ -310,7 +337,7 @@ html {
       background-repeat: no-repeat;
       background-position: center center;
     }
-    @media(max-width: 768px){
+    @media (max-width: 768px) {
       margin-top: 30px;
     }
   }

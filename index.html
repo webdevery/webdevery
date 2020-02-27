@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <img src="images/logoFull.png" alt="" style="display: none;">
+    <img src="images/logoFull.png" alt="" style="display: none;" />
     <div class="wrapper">
       <div class="header">
         <div class="header-menu">
@@ -19,7 +19,6 @@
             <a href="portfolio.html" class="menu-item">портфолио</a>
           </div>
           <a href="/" class="logo">
-            
             <span class="logo-img"></span>
             <span class="logo-text">WebDevery</span>
           </a>
@@ -32,7 +31,67 @@
           <a href="" class="header-burger-btn">
             <span></span>
           </a>
+          <div class="header-burger-menu">
+            <div class="header-burger-container">
+              <div class="col">
+                <div class="footer-title">
+                  Меню
+                </div>
+                <p>
+                  <a href="">Портфолио</a>
+                </p>
+                <p>
+                  <a href="">Наша команда</a>
+                </p>
+                <p>
+                  <a href="">Публикации</a>
+                </p>
+              </div>
+              <div class="col">
+                <div class="footer-title">
+                  Контакты
+                </div>
+                <p>
+                  <a href="tel:+7 999 999 99 99">
+                    +7 999 999 99 99
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:info@webdevery.ru">
+                    info@webdevery.ru
+                  </a>
+                </p>
+                <div class="footer-social">
+                  <a href="" class="footer-social-item">
+                    <i class="icon-fb"></i>
+                  </a>
+                  <a href="" class="footer-social-item">
+                    <i class="icon-vk"></i>
+                  </a>
+                  <a href="" class="footer-social-item">
+                    <i class="icon-telegramm"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col">
+                <div class="footer-title">
+                  заказать звонок
+                </div>
+                <form action="" class="footer-form">
+                  <input
+                    type="text"
+                    class="footer-input"
+                    name="phone"
+                    placeholder="Введите телефон"
+                  />
+                  <button class="footer-button">
+                    заказать
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
+        </div>
       </div>
       <div class="page" id="page">
         <div class="banner">
@@ -123,7 +182,7 @@
                 <div class="item-text">
                   <p>
                     Нужно придумать текст о создании сайтов. Что воходит и т.д.
-                  Можно написать какие инструменты используем
+                    Можно написать какие инструменты используем
                   </p>
                 </div>
                 <span class="plus-blue item-plus"></span>
@@ -145,7 +204,7 @@
                 <div class="item-text">
                   <p>
                     Нужно придумать текст о создании сайтов. Что воходит и т.д.
-                  Можно написать какие инструменты используем
+                    Можно написать какие инструменты используем
                   </p>
                 </div>
                 <span class="plus-blue item-plus"></span>
@@ -397,10 +456,10 @@
               </div>
             </div>
           </div>
-            <a href="#callback" class="btn-plus-text black js-popup mobile">
-              <span class="plus-blue"></span>
-              заказать сайт
-            </a>
+          <a href="#callback" class="btn-plus-text black js-popup mobile">
+            <span class="plus-blue"></span>
+            заказать сайт
+          </a>
         </div>
         <div class="news">
           <div class="angleBlock">
@@ -496,11 +555,13 @@
               <div class="footer-title">
                 Контакты
               </div>
-              <p><a href="tel:+7 999 999 99 99">
+              <p>
+                <a href="tel:+7 999 999 99 99">
                   +7 999 999 99 99
                 </a>
               </p>
-              <p><a href="mailto:info@webdevery.ru">
+              <p>
+                <a href="mailto:info@webdevery.ru">
                   info@webdevery.ru
                 </a>
               </p>
@@ -516,7 +577,6 @@
                 </a>
               </div>
             </div>
-
             <div class="col">
               <div class="footer-title">
                 заказать звонок
@@ -551,7 +611,7 @@
     <div class="modal">
       <div class="modal-item" id="callback">
         <div class="modal-container">
-          <div class="modal-bg" >
+          <div class="modal-bg">
             <div class="modal-bg-up" id="modal-canvas-up"></div>
             <div class="modal-bg-down" id="modal-canvas-down"></div>
           </div>
@@ -560,13 +620,39 @@
               заполните форму и мы свяжемся с вами
             </div>
             <div class="modal-input">
-              <input type="text" name="name" placeholder="Имя" required autocomplete="off">
+              <input
+                type="text"
+                name="name"
+                placeholder="Имя"
+                required
+                autocomplete="off"
+              />
             </div>
             <div class="modal-input">
-              <input type="text" name="phone" placeholder="Ваш телефон" required autocomplete="off">
+              <input
+                type="text"
+                name="phone"
+                placeholder="Ваш телефон"
+                required
+                autocomplete="off"
+              />
+            </div>
+            <div class="modal-input">
+              <input
+                type="text"
+                name="mail"
+                placeholder="Почта для связи"
+                required
+                autocomplete="off"
+              />
             </div>
             <div class="modal-input-full">
-             <textarea name="text" id=""rows="3" placeholder="Комментарий"></textarea>
+              <textarea
+                name="text"
+                id=""
+                rows="3"
+                placeholder="Комментарий"
+              ></textarea>
             </div>
             <button class="btn modal-btn">Отправить</button>
           </div>

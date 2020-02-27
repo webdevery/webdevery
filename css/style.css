@@ -81,6 +81,41 @@ body {
   padding: 0;
   border: 0;
 }
+html.overflow,
+body.overflow {
+  overflow: hidden;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+html::-webkit-scrollbar-button,
+body::-webkit-scrollbar-button {
+  background-color: #282928;
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background-color: #363636;
+}
+html::-webkit-scrollbar-track-piece,
+body::-webkit-scrollbar-track-piece {
+  background-color: #282928;
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: #099acc;
+  border-radius: 3px;
+}
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner {
+  background-color: #282928;
+}
+html::-webkit-resizer,
+body::-webkit-resizer {
+  background-color: #282928;
+}
 html {
   font-size: 16px;
 }
@@ -506,7 +541,7 @@ html a {
 .header .logo-text {
   display: none;
 }
-.header .logo-burger {
+.header-burger {
   display: none;
 }
 @media (max-width: 950px) {
@@ -547,6 +582,23 @@ html a {
   .header-burger {
     display: block;
     position: relative;
+  }
+  .header-burger.active .header-burger-btn:before,
+  .header-burger.active .header-burger-btn:after {
+    margin: 3px 0;
+  }
+  .header-burger.active .header-burger-btn span {
+    opacity: 0;
+  }
+  .header-burger.active .header-burger-btn:before {
+    transform: translateY(5px) rotate(-45deg);
+  }
+  .header-burger.active .header-burger-btn:after {
+    transform: translateY(-5px) rotate(45deg);
+  }
+  .header-burger.active .header-burger-menu {
+    opacity: 1;
+    pointer-events: auto;
   }
   .header-burger-btn {
     display: flex;
@@ -594,18 +646,61 @@ html a {
   .header-burger-btn:hover:after {
     margin: 5px 0;
   }
-  .header-burger-btn.active:before,
-  .header-burger-btn.active:after {
-    margin: 3px 0;
+  .header-burger-container {
+    padding: 45px 15px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    background: #282928;
   }
-  .header-burger-btn.active span {
+  .header-burger-container * {
+    color: #ffffff;
+  }
+  .header-burger-container .footer-title {
+    margin-bottom: 15px;
+  }
+  .header-burger-container .footer-social {
+    margin-top: 12px;
+  }
+  .header-burger-container .footer-form input {
+    margin-left: 0;
+    text-align: left;
+  }
+  .header-burger-container .footer-button {
+    margin-left: 0;
+  }
+  .header-burger-container .col:not(:first-child) {
+    margin-top: 35px;
+  }
+  .header-burger-container .col p {
+    margin: 0;
+    line-height: 220%;
+  }
+  .header-burger-menu {
+    pointer-events: none;
     opacity: 0;
+    transition: 0.3s;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    height: calc(100% - 60px);
+    background: rgba(54, 54, 54, 0.3);
+    overflow-x: hidden;
+    overflow-y: auto;
   }
-  .header-burger-btn.active:before {
-    transform: translateY(5px) rotate(-45deg);
+}
+@media (max-width: 550px) {
+  .header-burger-container {
+    max-width: none;
   }
-  .header-burger-btn.active:after {
-    transform: translateY(-5px) rotate(45deg);
+  .header-burger-menu {
+    background: #282928;
   }
 }
 .page {
@@ -2208,6 +2303,11 @@ html a {
   right: 10px;
   top: 10px;
 }
+@media (max-width: 500px) {
+  .fancybox-container .fancybox-slide {
+    padding: 0;
+  }
+}
 .modal {
   display: none;
 }
@@ -2218,6 +2318,7 @@ html a {
 .modal-container {
   display: flex;
   width: 900px;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
 }
 .modal-container > * {
   flex-basis: 50%;
@@ -2329,4 +2430,37 @@ html a {
 }
 .modal-btn {
   margin-top: 0;
+}
+@media (max-width: 950px) {
+  .modal-container {
+    max-width: 450px;
+    width: 100%;
+  }
+  .modal-container > * {
+    flex-basis: 100%;
+  }
+  .modal-bg {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .modal-container {
+    box-shadow: none;
+    margin: auto;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+  }
+  .modal-title {
+    font-size: 22px;
+  }
+  .modal-content {
+    padding: 70px 15px;
+  }
+  .modal-item {
+    width: 100%;
+    height: 100vh;
+    background-color: #363636;
+  }
 }
