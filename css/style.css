@@ -140,6 +140,22 @@ html a {
   text-decoration: none;
   color: inherit;
 }
+@media (max-width: 1150px) {
+  html h1 {
+    font-size: 2.5rem;
+  }
+  html h2 {
+    font-size: 1.5rem;
+  }
+  html h3 {
+    font-size: 1.375rem;
+  }
+}
+@media (max-width: 768px) {
+  html h1 {
+    font-size: 2.18rem;
+  }
+}
 .wrapper .content {
   width: 1200px;
   margin: auto;
@@ -147,6 +163,16 @@ html a {
 @media (max-width: 1300px) {
   .wrapper .content {
     width: 1100px;
+  }
+}
+@media (max-width: 1180px) {
+  .wrapper .content {
+    width: calc(100% - 80px);
+  }
+}
+@media (max-width: 550px) {
+  .wrapper .content {
+    width: calc(100% - 40px);
   }
 }
 .wrapper .icon .def {
@@ -535,12 +561,56 @@ html a {
 }
 .page .doing {
   width: 100%;
-  padding: 100px 70px;
-  margin-bottom: 100px;
+  margin: 100px auto;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-top: 0 !important;
   background: #282928;
   display: flex;
   position: relative;
   font-size: 1rem;
+}
+@media (max-width: 1024px) {
+  .page .doing {
+    margin: 70px auto;
+  }
+}
+@media (max-width: 550px) {
+  .page .doing {
+    margin: 50px auto;
+  }
+}
+.page .doing.box {
+  box-sizing: content-box;
+}
+@media (max-width: 1024px) {
+  .page .doing {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 550px) {
+  .page .doing {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.page .doing.box {
+  box-sizing: content-box;
+}
+@media (max-width: 1024px) {
+  .page .doing {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+@media (max-width: 550px) {
+  .page .doing {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 .page .doing-word {
   font-family: Raleway;
@@ -562,7 +632,6 @@ html a {
 .page .doing-text h2 {
   font-weight: 600;
   line-height: 100%;
-  text-align: center;
   letter-spacing: 0.04em;
   margin: 0;
   margin-bottom: 30px;
@@ -573,8 +642,6 @@ html a {
   color: #ffffff;
 }
 .page .doing-list {
-  margin-left: -30px;
-  margin-right: -30px;
   display: flex;
   flex-basis: calc(100% - 407px);
   position: relative;
@@ -583,8 +650,6 @@ html a {
 .page .doing-item {
   text-align: center;
   color: #ffffff;
-  margin: 0 30px;
-  flex-basis: calc(100% / 3);
   background: #363636;
   position: relative;
   padding: 90px 25px 70px 25px;
@@ -655,7 +720,7 @@ html a {
   position: relative;
 }
 .page .doing-item .item-list li:before {
-  content: '';
+  content: "";
   display: block;
   width: 15px;
   height: 15px;
@@ -676,12 +741,68 @@ html a {
 .page .doing-item:hover:hover .item-plus:before {
   transform: rotate(90deg);
 }
+@media (max-width: 1150px) {
+  .page .doing {
+    display: block;
+  }
+  .page .doing-text {
+    max-width: 380px;
+    padding-right: 0;
+  }
+  .page .doing-list {
+    margin-top: 30px;
+  }
+}
 .page .present {
+  width: 100%;
+  margin: 100px auto;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   background: #282928;
-  padding: 100px 70px 120px 70px;
-  margin: 100px 0;
   text-align: center;
   font-size: 1rem;
+}
+@media (max-width: 1024px) {
+  .page .present {
+    margin: 70px auto;
+  }
+}
+@media (max-width: 550px) {
+  .page .present {
+    margin: 50px auto;
+  }
+}
+.page .present.box {
+  box-sizing: content-box;
+}
+@media (max-width: 1024px) {
+  .page .present {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 550px) {
+  .page .present {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.page .present.box {
+  box-sizing: content-box;
+}
+@media (max-width: 1024px) {
+  .page .present {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+@media (max-width: 550px) {
+  .page .present {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 .page .present h2 {
   text-align: center;
@@ -859,12 +980,40 @@ html a {
   margin-top: 70px;
 }
 .page .comand {
-  margin: 100px 0;
+  margin: 100px auto;
+  width: 100%;
   font-size: 1rem;
+}
+@media (max-width: 1024px) {
+  .page .comand {
+    margin: 70px auto;
+  }
+}
+@media (max-width: 550px) {
+  .page .comand {
+    margin: 50px auto;
+  }
 }
 .page .comand-row {
   display: flex;
   padding: 20px 70px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.page .comand-row.box {
+  box-sizing: content-box;
+}
+@media (max-width: 1024px) {
+  .page .comand-row {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 550px) {
+  .page .comand-row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .page .comand-text {
   flex-basis: 425px;
@@ -884,7 +1033,7 @@ html a {
 }
 .page .comand-user {
   margin: 0 50px;
-  flex-basis: calc((100% - 150px)/4);
+  flex-basis: calc((100% - 300px)/4);
 }
 .page .comand-user:nth-child(1) {
   margin-left: 0;
@@ -920,12 +1069,54 @@ html a {
   font-weight: 300;
   font-size: 0.8125em;
   line-height: 130%;
-  color: #1B1B1B;
+  color: #1b1b1b;
+}
+@media (max-width: 1550px) {
+  .page .comand-user {
+    margin: 0 30px;
+    flex-basis: calc((100% - 180px)/4);
+  }
+}
+@media (max-width: 1350px) {
+  .page .comand-text {
+    flex-basis: 300px;
+  }
+  .page .comand-list {
+    flex-basis: calc(100% - 300px);
+    padding-left: 0;
+  }
+  .page .comand-user {
+    margin: 0 15px;
+    flex-basis: calc((100% - 90px)/4);
+  }
 }
 .page .angleBlock {
   margin: 50px auto;
+  padding-left: 70px;
+  padding-right: 70px;
+  box-sizing: content-box;
   max-width: 710px;
   font-size: 1rem;
+}
+@media (max-width: 1024px) {
+  .page .angleBlock {
+    margin: 40px auto;
+  }
+}
+.page .angleBlock.box {
+  box-sizing: content-box;
+}
+@media (max-width: 1024px) {
+  .page .angleBlock {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 550px) {
+  .page .angleBlock {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .page .angleBlock.while h2,
 .page .angleBlock.while p {
@@ -1038,9 +1229,32 @@ html a {
   text-align: center;
 }
 .page .tools {
+  margin: 50px auto;
+  padding-left: 70px;
+  padding-right: 70px;
+  box-sizing: content-box;
   max-width: 820px;
-  margin: 50px auto 100px auto;
   text-align: center;
+}
+@media (max-width: 1024px) {
+  .page .tools {
+    margin: 40px auto;
+  }
+}
+.page .tools.box {
+  box-sizing: content-box;
+}
+@media (max-width: 1024px) {
+  .page .tools {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 550px) {
+  .page .tools {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .page .tools h2 {
   margin: 0;
@@ -1100,6 +1314,10 @@ html a {
   text-align: center;
   position: relative;
   font-size: 1rem;
+}
+.page .news .content {
+  position: relative;
+  z-index: 2;
 }
 .page .news-list {
   display: flex;
@@ -1354,7 +1572,7 @@ html a {
   transform-origin: left top;
   transform: rotate(90deg);
   position: absolute;
-  color: #F5F5F5;
+  color: #f5f5f5;
   transform: rotate(-90deg);
   z-index: -1;
   left: 100px;
@@ -1363,6 +1581,65 @@ html a {
 .page .leftWord-container {
   position: relative;
   width: 100%;
+}
+.page .def-insert-section-h {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.page .def-insert-section-h.box {
+  box-sizing: content-box;
+}
+@media (max-width: 1024px) {
+  .page .def-insert-section-h {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 550px) {
+  .page .def-insert-section-h {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.page .def-insert-section-v {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.page .def-insert-section-v.box {
+  box-sizing: content-box;
+}
+@media (max-width: 1024px) {
+  .page .def-insert-section-v {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+@media (max-width: 550px) {
+  .page .def-insert-section-v {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+.page .def-offset-block {
+  margin: 50px auto;
+}
+@media (max-width: 1024px) {
+  .page .def-offset-block {
+    margin: 40px auto;
+  }
+}
+.page .def-offset-section {
+  margin: 100px auto;
+}
+@media (max-width: 1024px) {
+  .page .def-offset-section {
+    margin: 70px auto;
+  }
+}
+@media (max-width: 550px) {
+  .page .def-offset-section {
+    margin: 50px auto;
+  }
 }
 .footer {
   padding-top: 60px;
@@ -1498,7 +1775,7 @@ html a {
   width: 35px;
   min-width: 35px;
   height: 35px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;

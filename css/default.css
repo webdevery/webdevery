@@ -140,6 +140,22 @@ html a {
   text-decoration: none;
   color: inherit;
 }
+@media (max-width: 1150px) {
+  html h1 {
+    font-size: 2.5rem;
+  }
+  html h2 {
+    font-size: 1.5rem;
+  }
+  html h3 {
+    font-size: 1.375rem;
+  }
+}
+@media (max-width: 768px) {
+  html h1 {
+    font-size: 2.18rem;
+  }
+}
 .wrapper .content {
   width: 1200px;
   margin: auto;
@@ -147,6 +163,16 @@ html a {
 @media (max-width: 1300px) {
   .wrapper .content {
     width: 1100px;
+  }
+}
+@media (max-width: 1180px) {
+  .wrapper .content {
+    width: calc(100% - 80px);
+  }
+}
+@media (max-width: 550px) {
+  .wrapper .content {
+    width: calc(100% - 40px);
   }
 }
 .wrapper .icon .def {
