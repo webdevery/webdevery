@@ -35,8 +35,8 @@ var custom = {
     },
     createParticles: function() {
       var _ = this;
-      particlesJS("particles-js", getConfig('banner'));
-      particlesJS("particles-js-bg", getConfig('banner','down'));
+      particlesJS("particles-js", getConfig("banner"));
+      particlesJS("particles-js-bg", getConfig("banner", "down"));
       _.events();
     },
     init: function() {
@@ -59,12 +59,12 @@ var custom = {
         breakpoints: {
           900: {
             slidesPerView: 4,
-            slidesPerGroup: 4,
+            slidesPerGroup: 4
           },
           700: {
             slidesPerView: 3,
-            slidesPerGroup: 3,
-          },
+            slidesPerGroup: 3
+          }
         }
       });
     },
@@ -148,8 +148,8 @@ var custom = {
     zomm: function() {
       $(".portfolio-img-layers .layer").fancybox();
       $(".present-layers .layer-box").fancybox({
-        openEffect:'elastic',
-        closeEffect :'elastic',
+        openEffect: "elastic",
+        closeEffect: "elastic"
       });
     },
     scrolled: function() {
@@ -171,23 +171,23 @@ var custom = {
       this.scrolled();
     }
   },
-  modal:{
-    events:function(){
-      $(document).on('click','.js-popup',function(){
-        if(window.pJSDom.length >=4){
-          delete window.pJSDom[window.pJSDom.length-1]
-          delete window.pJSDom[window.pJSDom.length-1]
+  modal: {
+    events: function() {
+      $(document).on("click", ".js-popup", function() {
+        if (window.pJSDom.length >= 4) {
+          delete window.pJSDom[window.pJSDom.length - 1];
+          delete window.pJSDom[window.pJSDom.length - 1];
         }
-        particlesJS("modal-canvas-down", getConfig('modal','down'));
-        particlesJS("modal-canvas-up", getConfig('modal'));
-      })
+        particlesJS("modal-canvas-down", getConfig("modal", "down"));
+        particlesJS("modal-canvas-up", getConfig("modal"));
+      });
     },
-    init:function(){
+    init: function() {
       this.events();
       //$.fancybox.open({type:'modal', href:'#question_success'})
       $(".js-popup").fancybox({
-        openEffect:'fade',
-        closeEffect :'fade',
+        openEffect: "fade",
+        closeEffect: "fade"
       });
     }
   },
@@ -202,14 +202,24 @@ var custom = {
     if ($(".modal-item").length > 0) this.modal.init();
   }
 };
-var getConfig = function(type,pos){
-  var count = 130;
-  var size = 6;
-  if(type == 'banner'){
-    count = 80
+var getConfig = function(type, pos) {
+  var count;
+  var size;
+  if (type == "banner") {
+    count = 80;
+    if ($(window).width() < 550) {
+      count = 40;
+    }
+  } else {
+    count = 130;
+    if ($(window).width() < 550) {
+      count = 80;
+    }
   }
-  if(pos == 'down'){
-    size = 8
+  if (pos == "down") {
+    size = 8;
+  } else {
+    size = 6;
   }
   var configParticle = {
     particles: {
@@ -322,5 +332,4 @@ var getConfig = function(type,pos){
     retina_detect: true
   };
   return configParticle;
-}
-
+};
