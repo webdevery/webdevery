@@ -48,8 +48,8 @@ var custom = {
       var sliderTools = new Swiper(".tools-slider", {
         speed: 500,
         spaceBetween: 0,
-        slidesPerView: 1,
-        slidesPerGroup: 1,
+        slidesPerView: 2,
+        slidesPerGroup: 2,
         loop: true,
         loopFillGroupWithBlank: true,
         pagination: {
@@ -59,16 +59,12 @@ var custom = {
         breakpoints: {
           900: {
             slidesPerView: 4,
-            slidesPerGroup: 4
+            slidesPerGroup: 4,
           },
           700: {
             slidesPerView: 3,
-            slidesPerGroup: 3
+            slidesPerGroup: 3,
           },
-          500: {
-            slidesPerView: 2,
-            slidesPerGroup: 2
-          }
         }
       });
     },
