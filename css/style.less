@@ -562,8 +562,8 @@
       padding-left: 50px;
     }
     &-user {
-      margin: 0 50px;
-      flex-basis: ~"calc((100% - 300px)/4)";
+      margin: 0 25px;
+      flex-basis: ~"calc((100% - 150px)/4)";
       &:nth-child(1) {
         margin-left: 0;
       }
@@ -605,8 +605,11 @@
     }
     @media(max-width: 1550px){
       &-user{
-        margin: 0 30px;
-        flex-basis: ~"calc((100% - 180px)/4)";
+        margin: 0 20px;
+        flex-basis: ~"calc((100% - 120px)/4)";
+        .user-name{
+          max-width: 120px;
+        }
       }
     }
     @media(max-width: 1350px){
