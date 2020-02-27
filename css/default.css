@@ -81,20 +81,62 @@ body {
   padding: 0;
   border: 0;
 }
-html h1,
-body h1,
-html h2,
-body h2 {
-  font-family: "Raleway";
+html {
+  font-size: 16px;
 }
-html *,
-body * {
+html .def_h {
+  font-family: "Raleway";
+  text-transform: uppercase;
+  line-height: 135%;
+  font-weight: 300;
+  color: #fff;
+}
+html h1 {
+  font-family: "Raleway";
+  text-transform: uppercase;
+  line-height: 135%;
+  font-weight: 300;
+  color: #fff;
+  font-size: 3.125rem;
+}
+html h2 {
+  font-family: "Raleway";
+  text-transform: uppercase;
+  line-height: 135%;
+  font-weight: 300;
+  color: #fff;
+  font-size: 2.5rem;
+}
+html h3 {
+  font-family: "Raleway";
+  text-transform: uppercase;
+  line-height: 135%;
+  font-weight: 300;
+  color: #fff;
+  font-size: 1.75rem;
+}
+html h4 {
+  font-family: "Raleway";
+  text-transform: uppercase;
+  line-height: 135%;
+  font-weight: 300;
+  color: #fff;
+  font-size: 1.125rem;
+}
+html h5 {
+  font-family: "Raleway";
+  text-transform: uppercase;
+  line-height: 135%;
+  font-weight: 300;
+  color: #fff;
+  font-size: 1rem;
+}
+html * {
   font-family: "Open Sans";
-  color: #363636;
+  color: #282928;
   box-sizing: border-box;
 }
-html a,
-body a {
+html a {
   text-decoration: none;
   color: inherit;
 }
@@ -286,14 +328,6 @@ body a {
 }
 .wrapper .btn-plus-text:hover .plus-blue:before {
   transform: rotate(90deg);
-}
-.wrapper h2 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 35px;
-  line-height: 135%;
-  text-transform: uppercase;
-  color: #363636;
 }
 .fancybox-container .fancybox-button svg path {
   fill: #fff;

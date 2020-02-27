@@ -21,6 +21,7 @@
   height: 50px;
   background: @black;
   z-index: 2000;
+  font-size: 1rem;
   &-menu {
     display: flex;
     width: 100%;
@@ -30,9 +31,8 @@
     .menu {
       &-item {
         font-family: Open Sans;
-        font-style: normal;
         font-weight: 600;
-        font-size: 13px;
+        font-size: 0.8125em;
         line-height: 18px;
         color: #ffffff;
         text-align: center;
@@ -153,21 +153,13 @@
       user-select: none;
       h1 {
         margin: 0;
-        font-style: normal;
         font-weight: 600;
-        font-size: 50px;
-        line-height: 59px;
-        text-transform: uppercase;
-        color: #ffffff;
+        line-height: 118%;
         margin-bottom: 40px;
         max-width: 790px;
       }
       p {
         margin: 0 auto;
-        font-family: Open Sans;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
         color: #ffffff;
         line-height: 30px;
         max-width: 473px;
@@ -202,6 +194,7 @@
     background: @black;
     display: flex;
     position: relative;
+    font-size: 1rem;
     &-word {
       font-family: Raleway;
       font-style: normal;
@@ -219,22 +212,16 @@
       padding-right: 50px;
       flex-basis: 407px;
       h2 {
-        font-style: normal;
         font-weight: 600;
-        font-size: 40px;
-        line-height: 40px;
+        line-height: 100%;
         text-align: center;
         letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: #ffffff;
         margin: 0;
         margin-bottom: 30px;
       }
       p {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 26px;
+        font-size: 1em;
+        line-height: 160%;
         color: #ffffff;
       }
     }
@@ -247,14 +234,17 @@
       z-index: 2;
     }
     &-item {
+      text-align: center;
+      color: #ffffff;
       margin: 0 30px;
       flex-basis: @1_3;
       background: @gray;
       position: relative;
-      text-align: center;
       padding: 90px 25px 70px 25px;
       overflow: hidden;
       transition: box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
       .item {
         &-num {
           font-family: Raleway;
@@ -271,27 +261,64 @@
         }
         &-title {
           font-family: Open Sans;
-          font-style: normal;
           font-weight: 600;
-          font-size: 16px;
-          line-height: 26px;
+          font-size: 1em;
+          line-height: 160%;
           letter-spacing: 0.04em;
           text-transform: uppercase;
-          color: #ffffff;
           text-align: inherit;
+          color: inherit;
           margin-bottom: 23px;
         }
         &-text {
-          font-style: normal;
-          font-weight: normal;
-          font-size: 16px;
-          line-height: 26px;
-          color: #ffffff;
+          margin-bottom: 40px;
+          color: inherit;
           text-align: inherit;
-          margin-bottom: 57px;
+          p{
+            font-family: Open Sans;
+            font-size: 1em;
+            line-height: 160%;
+            text-align: inherit;
+            color: inherit;
+            margin: 0;
+          }
         }
         &-plus {
           margin: 0 auto;
+          margin-top: auto;
+        }
+        &-list{
+          padding: 0;
+          margin: 0;
+          color: inherit;
+          text-align: left;
+          display: inline-flex;
+          flex-direction: column;
+          align-items: flex-start;
+          li{
+            list-style: none;
+            font-family: Open Sans;
+            font-size: 1em;
+            line-height: 160%;
+            text-align: inherit;
+            color: inherit;
+            margin-bottom: 8px;
+            padding-left: 30px;
+            position: relative;
+            &:before{
+              content: '';
+              display: block;
+              width: 15px;
+              height: 15px;
+              background-image: url(../images/plus_blue.svg);
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+              position: absolute;
+              left: 0;
+              top: 5px;
+            }
+          }
         }
       }
       &:hover {
@@ -312,11 +339,9 @@
     padding: 100px 70px 120px 70px;
     margin: 100px 0;
     text-align: center;
+    font-size: 1rem;
     h2 {
-      font-size: 40px;
-      line-height: 63px;
       text-align: center;
-      color: #ffffff;
       margin: 0;
       margin-bottom: 66px;
     }
@@ -342,6 +367,9 @@
           }
         }
       }
+      &:nth-child(2n-1):not(:first-child){
+        margin-top: 70px;
+      } 
       .present {
         &-img {
           width: ~"calc(50% - 80px)";
@@ -480,22 +508,15 @@
       padding-left: 70px;
       text-align: left;
       h3 {
-        font-style: normal;
-        font-weight: 300;
-        font-size: 28px;
-        line-height: 135%;
         letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: #ffffff;
         margin-bottom: 21px;
         display: block;
         max-width: 450px;
       }
       p {
-        font-style: normal;
         font-weight: 300;
-        font-size: 16px;
-        line-height: 26px;
+        font-size: 1em;
+        line-height: 162.5%;
         color: #ffffff;
         margin-bottom: 34px;
         display: block;
@@ -509,6 +530,7 @@
   }
   .comand{
     margin: 100px 0;
+    font-size: 1rem;
     &-row{
       display: flex;
       padding: 20px 70px;
@@ -517,12 +539,9 @@
       flex-basis: 425px;
       padding-right: 50px;
       p{
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 26px;
+        font-size: 1em;
+        line-height: 162.5%;
         display: block;
-        color: @black;
         margin: 0;
         margin-bottom: 50px;
       }
@@ -556,22 +575,19 @@
         }
         &-name{
           font-family: Raleway;
-          font-style: normal;
           font-weight: 300;
-          font-size: 16px;
+          font-size: 1em;
           line-height: 130%;
           display: flex;
           align-items: center;
           letter-spacing: 0.04em;
           text-transform: uppercase;
-          color: #000000;
           margin-bottom: 12px;
         }
         &-type{
           font-family: Open Sans;
-          font-style: normal;
           font-weight: 300;
-          font-size: 13px;
+          font-size: 0.8125em;
           line-height: 130%;
           color: #1B1B1B;
         }
@@ -581,6 +597,7 @@
   .angleBlock {
     margin: 50px auto;
     max-width: 710px;
+    font-size: 1rem;
     &.while {
       h2,
       p {
@@ -636,13 +653,13 @@
       top: 0;
     }
     h2 {
+      color: @black;
       margin: 0;
     }
     p {
-      font-style: normal;
       font-weight: 300;
-      font-size: 18px;
-      line-height: 30px;
+      font-size: 1.125em;
+      line-height: 166%;
       color: @gray;
 
       margin: 0;
@@ -657,7 +674,9 @@
     margin: 50px auto 100px auto;
     text-align: center;
     h2 {
+      margin: 0;
       margin-bottom: 50px;
+      color: @black;
     }
     .swiper {
       &-wrapper {
@@ -714,6 +733,7 @@
     padding-bottom: 100px;
     text-align: center;
     position: relative;
+    font-size: 1rem;
     &-list {
       display: flex;
       flex-wrap: wrap;
@@ -744,23 +764,20 @@
       }
       &-title {
         font-family: Raleway;
-        font-style: normal;
         font-weight: 300;
-        font-size: 18px;
+        font-size: 1em;
         line-height: 130%;
-        color: #000000;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
 
         display: flex;
         align-items: center;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
         margin-bottom: 20px;
       }
       &-date {
         font-family: Open Sans;
-        font-style: normal;
         font-weight: 300;
-        font-size: 13px;
+        font-size: 0.8125em;
         line-height: 130%;
         color: #1b1b1b;
         display: flex;
@@ -769,9 +786,8 @@
       }
       &-link {
         font-family: Open Sans;
-        font-style: normal;
         font-weight: 300;
-        font-size: 15px;
+        font-size: 0.9375em;
         line-height: 130%;
         display: flex;
         align-items: center;
@@ -788,7 +804,7 @@
   .portfolio {
     background: @black;
     background: linear-gradient(219.9deg, #044a67 0%, #54d5ff 100%);
-    //padding-top: 50px;
+    font-size: 1rem;
     &::before {
       height: 50px;
       background: @black;
@@ -968,15 +984,14 @@
       justify-content: center;
       h2,
       p {
-        color: #ffffff;
         margin: 0;
         margin-bottom: 40px;
       }
       p {
-        font-style: normal;
+        color: #ffffff;
         font-weight: 300;
-        font-size: 13px;
-        line-height: 30px;
+        font-size: 1em;
+        line-height: 166%;
         letter-spacing: 0.05em;
       }
     }
@@ -1016,6 +1031,7 @@
   justify-content: space-between;
   width: 100%;
   z-index: -1;
+  font-size: 1rem;
   .row {
     display: flex;
     margin-left: -15px;
@@ -1027,10 +1043,8 @@
   }
   &-title {
     font-family: Raleway;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 1.125em;
+    line-height: 166%;
     color: #ffffff;
     text-transform: uppercase;
     display: flex;
@@ -1046,10 +1060,8 @@
     }
   }
   p {
-    font-family: Open Sans;
-    font-style: normal;
     font-weight: 300;
-    font-size: 13px;
+    font-size: 0.825em;
     line-height: 130%;
     color: #ffffff;
     display: flex;
@@ -1063,9 +1075,8 @@
   }
   &-input {
     font-family: Open Sans;
-    font-style: normal;
     font-weight: 300;
-    font-size: 13px;
+    font-size: 0.825em;
     line-height: 130%;
     color: #ffffff;
     display: flex;
@@ -1085,7 +1096,7 @@
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 11px;
+    font-size: 0.6875em;
     line-height: 130%;
     color: #ffffff;
     /* or 14px */
@@ -1108,31 +1119,22 @@
     }
   }
   &-down {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 130%;
-    color: #ffffff;
     margin-top: 50px;
     display: flex;
     align-items: center;
-    text-align: right;
     background: @gray;
     height: 68px;
   }
   &-pp {
     font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
+    font-size: 0.8125em;
     line-height: 130%;
     color: #ffffff;
+    text-align: center;
     /* or 17px */
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     a {
       transition: @anim;
       &:hover {

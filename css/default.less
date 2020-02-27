@@ -119,13 +119,39 @@ body {
   padding: 0;
   border: 0;
   //scroll-behavior: smooth;
-  h1,
-  h2 {
+}
+html{
+  font-size: 16px;
+  .def_h{
     font-family: "Raleway";
+    text-transform: uppercase;
+    line-height: 135%;
+    font-weight: 300;
+    color: #fff;
+  }
+  h1{
+    .def_h;
+    font-size: 3.125rem;
+  }
+  h2{
+    .def_h;
+    font-size: 2.5rem;
+  }
+  h3{
+    .def_h;
+    font-size: 1.75rem;
+  }
+  h4{
+    .def_h;
+    font-size: 1.125rem;
+  }
+  h5{
+    .def_h;
+    font-size: 1rem;
   }
   * {
     font-family: "Open Sans";
-    color: @gray;
+    color: @black;
     box-sizing: border-box;
   }
   a {
@@ -285,14 +311,6 @@ body {
         }
       }
     }
-  }
-  h2 {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 35px;
-    line-height: 135%;
-    text-transform: uppercase;
-    color: @gray;
   }
 }
 .fancybox-container {
