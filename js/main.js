@@ -81,7 +81,9 @@ var custom = {
         slidesPerGroup: 1,
         breakpoints: {
           1500: {
-            spaceBetween: 60
+            spaceBetween: 60,
+            slidesPerView: 3,
+            slidesPerGroup: 3
           },
           1400: {
             slidesPerView: 3,
