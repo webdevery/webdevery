@@ -109,7 +109,7 @@
   font-display: swap;
 }
 
-@blue: #099ACC;
+@blue: #099acc;
 @black: #282928;
 @gray: #363636;
 
@@ -120,32 +120,32 @@ body {
   border: 0;
   //scroll-behavior: smooth;
 }
-html{
+html {
   font-size: 16px;
-  .def_h{
+  .def_h {
     font-family: "Raleway";
     text-transform: uppercase;
     line-height: 135%;
     font-weight: 300;
     color: #fff;
   }
-  h1{
+  h1 {
     .def_h;
     font-size: 3.125rem;
   }
-  h2{
+  h2 {
     .def_h;
     font-size: 2.5rem;
   }
-  h3{
+  h3 {
     .def_h;
     font-size: 1.75rem;
   }
-  h4{
+  h4 {
     .def_h;
     font-size: 1.125rem;
   }
-  h5{
+  h5 {
     .def_h;
     font-size: 1rem;
   }
@@ -158,189 +158,184 @@ html{
     text-decoration: none;
     color: inherit;
   }
-  @media(max-width: 1150px){
-    h1{
+  @media (max-width: 1150px) {
+    h1 {
       font-size: 2.5rem;
     }
-    h2{
+    h2 {
       font-size: 1.5rem;
     }
-    h3{
+    h3 {
       font-size: 1.375rem;
     }
   }
-  @media(max-width: 768px){
-    h1{
+  @media (max-width: 768px) {
+    h1 {
       font-size: 2.18rem;
     }
   }
-}
-.wrapper {
-  .content {
-    width: 1200px;
-    margin: auto;
-    @media (max-width: 1300px) {
-      width: 1100px;
+  @media (max-width: 550px) {
+    h1 {
+      font-size: 1.375rem;
     }
-    @media (max-width: 1180px) {
-      width: ~"calc(100% - 80px)";
-    }
-    @media (max-width: 550px) {
-      width: ~"calc(100% - 40px)";
+    h2 {
+      font-size: 1.3125rem;
     }
   }
-  .icon {
-    .def {
+}
+.content {
+  width: 1200px;
+  margin: auto;
+  @media (max-width: 1300px) {
+    width: 1100px;
+  }
+  @media (max-width: 1180px) {
+    width: ~"calc(100% - 80px)";
+  }
+  @media (max-width: 550px) {
+    width: ~"calc(100% - 40px)";
+  }
+}
+.icon {
+  .def {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &-str-down {
+    .def;
+    width: 42px;
+    height: 42px;
+    background-image: url(../images/str-down.svg);
+  }
+  &-str-r-white {
+    .def;
+    width: 25px;
+    height: 8px;
+    background-image: url(../images/str-right-white.svg);
+  }
+  &-str-up {
+    .def;
+    width: 15px;
+    height: 8px;
+    background-image: url(../images/str-up.svg);
+  }
+  &-fb {
+    .def;
+    width: 10px;
+    height: 16px;
+    background-image: url(../images/fb.svg);
+  }
+  &-vk {
+    .def;
+    height: 10px;
+    width: 16px;
+    background-image: url(../images/vk.svg);
+  }
+  &-telegramm {
+    .def;
+    width: 16px;
+    height: 14px;
+    background-image: url(../images/telegramm.svg);
+  }
+}
+.plus {
+  .def-plus(@bg) {
+    width: 37px;
+    height: 37px;
+    min-width: 37px;
+    min-height: 37px;
+    background: @bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid @bg;
+    transition: all 0.3s;
+    &::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      display: block;
+      background-image: url(../images/plus.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transition: all 0.3s;
+    }
+    &:hover {
+      border: 2px solid #ffffff;
+      &:before {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .def-plus(@gray);
+  &-blue {
+    .def-plus(@blue);
+  }
+}
+.btn {
+  .def-but(@bg,@border_c) {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 60px;
+    margin-top: 60px;
+    display: inline-flex;
+    align-items: center;
+    background: @bg;
+    border: 2px solid @border_c;
+    padding: 0 40px;
+    &:hover {
+      &:after {
+        transform: translateX(10px);
+      }
+    }
+    &:after {
+      content: "";
+      transition: all 0.3s;
+      margin-left: 20px;
+      width: 25px;
+      height: 8px;
+      background-image: url(../images/str-right-white.svg);
       display: inline-block;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
     }
-    &-str-down {
-      .def;
-      width: 42px;
-      height: 42px;
-      background-image: url(../images/str-down.svg);
-    }
-    &-str-r-white {
-      .def;
-      width: 25px;
-      height: 8px;
-      background-image: url(../images/str-right-white.svg);
-    }
-    &-str-up {
-      .def;
-      width: 15px;
-      height: 8px;
-      background-image: url(../images/str-up.svg);
-    }
-    &-fb {
-      .def;
-      width: 10px;
-      height: 16px;
-      background-image: url(../images/fb.svg);
-    }
-    &-vk {
-      .def;
-      height: 10px;
-      width: 16px;
-      background-image: url(../images/vk.svg);
-    }
-    &-telegramm {
-      .def;
-      width: 16px;
-      height: 14px;
-      background-image: url(../images/telegramm.svg);
-    }
   }
-  .plus {
-    .def-plus(@bg) {
-      width: 37px;
-      height: 37px;
-      min-width: 37px;
-      min-height: 37px;
-      background: @bg;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      border: 2px solid @bg;
-      transition: all 0.3s;
-      &::before {
-        content: "";
-        width: 15px;
-        height: 15px;
-        display: block;
-        background-image: url(../images/plus.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        transition: all 0.3s;
-      }
-      &:hover {
+  .def-but(@black, @blue);
+  &-plus-text {
+    display: inline-flex;
+    align-items: center;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+    transition: color 0.3s;
+    &.black {
+      color: @black;
+    }
+    span {
+      margin-right: 20px;
+    }
+    &:hover {
+      color: @blue;
+      .plus-blue {
         border: 2px solid #ffffff;
         &:before {
           transform: rotate(90deg);
-        }
-      }
-    }
-    .def-plus(@gray);
-    &-blue {
-      .def-plus(@blue);
-    }
-  }
-  .btn {
-    .def-but(@bg,@border_c) {
-      font-family: Raleway;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 18px;
-      text-align: center;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: #ffffff;
-      line-height: 60px;
-      margin-top: 60px;
-      display: inline-flex;
-      align-items: center;
-      background: @bg;
-      border: 2px solid @border_c;
-      padding: 0 40px;
-      &:hover {
-        &:after {
-          transform: translateX(10px);
-        }
-      }
-      &:after {
-        content: "";
-        transition: all 0.3s;
-        margin-left: 20px;
-        width: 25px;
-        height: 8px;
-        background-image: url(../images/str-right-white.svg);
-        display: inline-block;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
-      }
-    }
-    .def-but(@black, @blue);
-    &-plus-text{
-      display: inline-flex;
-      align-items: center;
-      font-family: Raleway;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 28px;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      transition: color 0.3s;
-      &.black{
-        color: @black;
-      }
-      span{
-        margin-right: 20px;
-      }
-      &:hover{
-        color: @blue;
-        .plus-blue {
-          border: 2px solid #ffffff;
-          &:before {
-            transform: rotate(90deg);
-          }
-        }
-      }
-    }
-  }
-}
-.fancybox-container {
-  .fancybox {
-    &-button {
-      svg {
-        path {
-          fill: #fff;
         }
       }
     }

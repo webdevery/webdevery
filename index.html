@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="favicon.jpg" type="image/jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:image" content="images/logoFull.png">
     <title>WebDevery - Digital Production</title>
     <link rel="stylesheet" href="libs/swiper/swiper.min.css" />
     <link rel="stylesheet" href="libs/fancybox/fancybox.min.css" />
@@ -20,6 +19,7 @@
           </div>
           <a href="/" class="logo">
             <!-- <span class="logo-text">WebDevery</span> -->
+            <img src="images/logoFull.png" alt="" style="display: none;">
             <span class="logo-img"></span>
           </a>
           <div class="header-menu-right">
@@ -43,7 +43,7 @@
               Используем лучшие веб инструменты для реализации современных
               решений и внедрения их в наши проекты.
             </p>
-            <a href="" class="banner-btn btn">
+            <a href="#callback" class="banner-btn btn js-popup">
               Заказать сайт
             </a>
           </div>
@@ -79,7 +79,7 @@
           </div>
           <div class="doing-list swiper-container">
             <div class="swiper-wrapper">
-              <a href="" class="doing-item swiper-slide">
+              <a href="#callback" class="doing-item swiper-slide js-popup">
                 <div class="item-num">o1</div>
                 <div class="item-title">Сайт под ключ</div>
                 <div class="item-text">
@@ -97,11 +97,10 @@
                       Сайт-визитка
                     </li>
                   </ul>
-                 
                 </div>
                 <span class="plus-blue item-plus"></span>
               </a>
-              <a href="" class="doing-item swiper-slide">
+              <a href="#callback" class="doing-item swiper-slide js-popup">
                 <div class="item-num">o2</div>
                 <div class="item-title">Seo оптимизация</div>
                 <div class="item-text">
@@ -112,7 +111,7 @@
                 </div>
                 <span class="plus-blue item-plus"></span>
               </a>
-              <a href="" class="doing-item swiper-slide">
+              <a href="#callback" class="doing-item swiper-slide js-popup">
                 <div class="item-num">o3</div>
                 <div class="item-title">Услуга</div>
                 <div class="item-text">
@@ -123,7 +122,7 @@
                 </div>
                 <span class="plus-blue item-plus"></span>
               </a>
-              <a href="" class="doing-item swiper-slide">
+              <a href="#callback" class="doing-item swiper-slide js-popup">
                 <div class="item-num">o2</div>
                 <div class="item-title">Seo оптимизация</div>
                 <div class="item-text">
@@ -134,7 +133,7 @@
                 </div>
                 <span class="plus-blue item-plus"></span>
               </a>
-              <a href="" class="doing-item swiper-slide">
+              <a href="#callback" class="doing-item swiper-slide js-popup">
                 <div class="item-num">o3</div>
                 <div class="item-title">Услуга</div>
                 <div class="item-text">
@@ -146,7 +145,6 @@
                 <span class="plus-blue item-plus"></span>
               </a>
             </div>
-            
           </div>
           <div class="doing-word">
             Web-devery
@@ -255,7 +253,7 @@
                   строчек чтобы контент не толкал размер блока на маленьких
                   экранах, смотрелось бы как какашка
                 </p>
-                <a href="" class="btn-plus-text">
+                <a href="#callback" class="btn-plus-text js-popup">
                   <span class="plus-blue"></span>
                   заказать сайт
                 </a>
@@ -313,14 +311,14 @@
                   строчек чтобы контент не толкал размер блока на маленьких
                   экранах, смотрелось бы как какашка
                 </p>
-                <a href="" class="btn-plus-text">
+                <a href="#callback" class="btn-plus-text js-popup">
                   <span class="plus-blue"></span>
                   заказать сайт
                 </a>
               </div>
             </div>
           </div>
-          <a href="portfolio" class="btn present-downBtn">
+          <a href="portfolio.html" class="btn present-downBtn">
             Все работы
           </a>
         </div>
@@ -341,7 +339,7 @@
                 Подход индивидуальный. Текст о команде, какие мы крутые.
                 Справимся с любой задачей. Подход индивидуальный
               </p>
-              <a href="" class="btn-plus-text black">
+              <a href="#callback" class="btn-plus-text black js-popup">
                 <span class="plus-blue"></span>
                 заказать сайт
               </a>
@@ -533,6 +531,31 @@
               <a href="">Политика конфиденциальности</a> | © 2020 WebDevery
               Digital Agancy. Все права защищены.
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-item" id="callback">
+        <div class="modal-container">
+          <div class="modal-bg" >
+            <div class="modal-bg-up" id="modal-canvas-up"></div>
+            <div class="modal-bg-down" id="modal-canvas-down"></div>
+          </div>
+          <div class="modal-content">
+            <div class="modal-title">
+              заполните форму и мы свяжемся с вами
+            </div>
+            <div class="modal-input">
+              <input type="text" name="name" placeholder="Имя" required autocomplete="off">
+            </div>
+            <div class="modal-input">
+              <input type="text" name="phone" placeholder="Ваш телефон" required autocomplete="off">
+            </div>
+            <div class="modal-input-full">
+             <textarea name="text" id=""rows="3" placeholder="Комментарий"></textarea>
+            </div>
+            <button class="btn modal-btn">Отправить</button>
           </div>
         </div>
       </div>

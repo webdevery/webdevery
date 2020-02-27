@@ -35,18 +35,9 @@ var custom = {
     },
     createParticles: function() {
       var _ = this;
-      particlesJS.load(
-        "particles-js",
-        "libs/particles/particles.json",
-        function() {
-          _.events();
-        }
-      );
-      particlesJS.load(
-        "particles-js-bg",
-        "libs/particles/particles.json",
-        function() {}
-      );
+      particlesJS("particles-js", getConfig('banner'));
+      particlesJS("particles-js-bg", getConfig('banner','down'));
+      _.events();
     },
     init: function() {
       this.createParticles();
@@ -66,18 +57,18 @@ var custom = {
           clickable: true
         },
         breakpoints: {
-            900: {
-                slidesPerView: 4,
-                slidesPerGroup: 4,
-            },
-            700: {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-            },
-            500: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-            },
+          900: {
+            slidesPerView: 4,
+            slidesPerGroup: 4
+          },
+          700: {
+            slidesPerView: 3,
+            slidesPerGroup: 3
+          },
+          500: {
+            slidesPerView: 2,
+            slidesPerGroup: 2
+          }
         }
       });
     },
@@ -160,7 +151,10 @@ var custom = {
   portfolioImgs: {
     zomm: function() {
       $(".portfolio-img-layers .layer").fancybox();
-      $(".present-layers .layer-box").fancybox();
+      $(".present-layers .layer-box").fancybox({
+        openEffect:'elastic',
+        closeEffect :'elastic',
+      });
     },
     scrolled: function() {
       $(document).on("scroll", function() {
@@ -181,6 +175,26 @@ var custom = {
       this.scrolled();
     }
   },
+  modal:{
+    events:function(){
+      $(document).on('click','.js-popup',function(){
+        if(window.pJSDom.length >=4){
+          delete window.pJSDom[window.pJSDom.length-1]
+          delete window.pJSDom[window.pJSDom.length-1]
+        }
+        particlesJS("modal-canvas-down", getConfig('modal','down'));
+        particlesJS("modal-canvas-up", getConfig('modal'));
+      })
+    },
+    init:function(){
+      this.events();
+      //$.fancybox.open({type:'modal', href:'#question_success'})
+      $(".js-popup").fancybox({
+        openEffect:'fade',
+        closeEffect :'fade',
+      });
+    }
+  },
   init: function() {
     this.header.init();
     if ($(".banner").length > 0) this.banner.init();
@@ -189,5 +203,128 @@ var custom = {
     if ($(".goto-up").length > 0) this.gotoUp.init();
     if ($(".layer").length > 0) this.portfolioImgs.init();
     if ($(".doing-list").length > 0) this.doingSlider.init();
+    if ($(".modal-item").length > 0) this.modal.init();
   }
 };
+var getConfig = function(type,pos){
+  var count = 130;
+  var size = 6;
+  if(type == 'banner'){
+    count = 80
+  }
+  if(pos == 'down'){
+    size = 8
+  }
+  var configParticle = {
+    particles: {
+      number: {
+        value: count,
+        density: {
+          enable: true,
+          value_area: 1499.3805191013182
+        }
+      },
+      color: {
+        value: "#000000"
+      },
+      shape: {
+        type: "circle",
+        stroke: {
+          width: 0,
+          color: "#000000"
+        },
+        polygon: {
+          nb_sides: 5
+        },
+        image: {
+          src: "img/github.svg",
+          width: 100,
+          height: 100
+        }
+      },
+      opacity: {
+        value: 0.5,
+        random: false,
+        anim: {
+          enable: false,
+          speed: 1,
+          opacity_min: 0.1,
+          sync: false
+        }
+      },
+      size: {
+        value: size,
+        random: true,
+        anim: {
+          enable: false,
+          speed: 40,
+          size_min: 3.248308849205381,
+          sync: false
+        }
+      },
+      line_linked: {
+        enable: true,
+        distance: 224.4776885211732,
+        color: "#000000",
+        opacity: 0.24051180912982842,
+        width: 1.5
+      },
+      move: {
+        enable: true,
+        speed: 6,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
+        attract: {
+          enable: false,
+          rotateX: 600,
+          rotateY: 1200
+        }
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "grab"
+        },
+        onclick: {
+          enable: false,
+          mode: "bubble"
+        },
+        resize: true
+      },
+      modes: {
+        grab: {
+          distance: 255.80432187492372,
+          line_linked: {
+            opacity: 0.5264759836463393
+          }
+        },
+        bubble: {
+          distance: 400,
+          size: 40,
+          duration: 2,
+          opacity: 8,
+          speed: 3
+        },
+        repulse: {
+          distance: 200,
+          duration: 0.4
+        },
+        push: {
+          particles_nb: 4
+        },
+        remove: {
+          particles_nb: 2
+        }
+      }
+    },
+    retina_detect: true
+  };
+  return configParticle;
+}
+
