@@ -177,6 +177,13 @@ html p {
   line-height: 162%;
   font-weight: 300;
 }
+html small {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 130%;
+}
 html a {
   text-decoration: none;
   color: inherit;
@@ -256,6 +263,11 @@ html a {
   width: 15px;
   height: 8px;
   background-image: url(../images/str-up.svg);
+}
+.icon-str-up-blue {
+  width: 15px;
+  height: 8px;
+  background-image: url(../images/str-up-blue.svg);
 }
 .icon-fb {
   display: inline-block;

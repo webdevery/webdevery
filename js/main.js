@@ -119,9 +119,9 @@ var custom = {
   },
   fullImg: {
     doing: function(scrollTop) {
-      var top = $(".fullImg-img").offset().top;
-      var paralax = (scrollTop - top) * 0.5 - 50;
-      $(".fullImg-img").css("background-position", "center " + paralax + "px");
+      var top = $(".news-detail-head").offset().top;
+      var paralax = (scrollTop - top) * 0.5 + 20;
+      $(".news-detail-head").css("background-position", "center " + paralax + "px");
     },
     events: function() {
       var _ = this;
@@ -131,6 +131,7 @@ var custom = {
     },
     init: function() {
       this.events();
+      this.doing($(document).scrollTop());
     }
   },
   gotoUp: {
@@ -207,7 +208,7 @@ var custom = {
     this.header.init();
     if ($(".banner").length > 0) this.banner.init();
     if ($(".tools").length > 0) this.sliderTools.init();
-    if ($(".fullImg-img").length > 0) this.fullImg.init();
+    if ($(".news-detail-head").length > 0) this.fullImg.init();
     if ($(".goto-up").length > 0) this.gotoUp.init();
     if ($(".layer").length > 0) this.portfolioImgs.init();
     if ($(".doing-list").length > 0) this.doingSlider.init();
