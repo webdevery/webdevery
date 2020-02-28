@@ -171,6 +171,12 @@ html * {
   color: #282928;
   box-sizing: border-box;
 }
+html p {
+  font-family: "Open Sans";
+  color: #282928;
+  line-height: 162%;
+  font-weight: 300;
+}
 html a {
   text-decoration: none;
   color: inherit;

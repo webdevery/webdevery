@@ -171,6 +171,12 @@ html * {
   color: #282928;
   box-sizing: border-box;
 }
+html p {
+  font-family: "Open Sans";
+  color: #282928;
+  line-height: 162%;
+  font-weight: 300;
+}
 html a {
   text-decoration: none;
   color: inherit;
@@ -435,7 +441,7 @@ html a {
 }
 .wrapper {
   overflow: hidden;
-  margin-bottom: 340px;
+  margin-bottom: 356px;
 }
 @media (max-width: 950px) {
   .wrapper {
@@ -758,7 +764,6 @@ html a {
 .page .banner-content p {
   margin: 0 auto;
   color: #ffffff;
-  line-height: 30px;
   max-width: 473px;
 }
 .page .banner-btn {
@@ -923,17 +928,6 @@ html a {
   letter-spacing: 0.04em;
   color: #1c1d1c;
 }
-.page .doing-item .item-title {
-  font-family: Open Sans;
-  font-weight: 600;
-  font-size: 1em;
-  line-height: 160%;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-align: inherit;
-  color: inherit;
-  margin-bottom: 23px;
-}
 .page .doing-item .item-text {
   margin-bottom: 40px;
   color: inherit;
@@ -983,6 +977,15 @@ html a {
   position: absolute;
   left: 0;
   top: 5px;
+}
+.page .doing-item h4 {
+  font-size: 1.125em;
+  line-height: 160%;
+  letter-spacing: 0.04em;
+  text-align: inherit;
+  color: inherit;
+  margin: 0;
+  margin-bottom: 23px;
 }
 .page .doing-item:hover {
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
@@ -1233,13 +1236,10 @@ html a {
   max-width: 450px;
 }
 .page .present-text p {
-  font-weight: 300;
-  font-size: 1em;
-  line-height: 162.5%;
-  color: #ffffff;
   margin-bottom: 34px;
   display: block;
   max-width: 500px;
+  color: #ffffff;
 }
 .page .present-downBtn {
   margin-top: 70px;
@@ -1340,8 +1340,6 @@ html a {
   padding-right: 50px;
 }
 .page .comand-text p {
-  font-size: 1rem;
-  line-height: 162.5%;
   display: block;
   margin: 0;
   margin-bottom: 50px;
@@ -1430,7 +1428,8 @@ html a {
     text-align: left;
   }
   .page .comand-text {
-    text-align: left;
+    text-align: center;
+    padding-right: 0;
   }
   .page .comand-text p {
     margin-bottom: 40px;
@@ -1587,9 +1586,6 @@ html a {
   margin: 0;
 }
 .page .angleBlock p {
-  font-weight: 300;
-  font-size: 1.125em;
-  line-height: 166%;
   color: #363636;
   margin: 0;
   margin-top: 25px;
@@ -1598,9 +1594,6 @@ html a {
   text-align: center;
 }
 @media (max-width: 768px) {
-  .page .angleBlock {
-    font-size: 0.833rem;
-  }
   .page .angleBlock-content {
     padding: 20px 15px;
   }
@@ -2097,7 +2090,7 @@ html a {
 }
 .footer {
   padding-top: 60px;
-  height: 340px;
+  height: 356px;
   background: #282928;
   position: fixed;
   bottom: 0;
@@ -2138,9 +2131,6 @@ html a {
   pointer-events: none;
 }
 .footer p {
-  font-weight: 300;
-  font-size: 0.825em;
-  line-height: 130%;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -2149,7 +2139,7 @@ html a {
   transition: 0.3s ease-out;
 }
 .footer p a:hover {
-  opacity: 0.6;
+  color: #099acc;
 }
 .footer-input {
   font-family: Open Sans;
@@ -2429,19 +2419,6 @@ html a {
   padding: 70px 75px;
   background: #363636;
 }
-.modal-title {
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 32px;
-  /* or 145% */
-  text-align: center;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  margin-bottom: 20px;
-}
 .modal-input {
   margin-bottom: 10px;
 }
@@ -2510,9 +2487,6 @@ html a {
     overflow-y: auto;
     overflow-x: hidden;
     display: block;
-  }
-  .modal-title {
-    font-size: 22px;
   }
   .modal-content {
     padding: 70px 15px;
