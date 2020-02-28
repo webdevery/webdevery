@@ -43,8 +43,8 @@ var custom = {
     },
     createParticles: function() {
       var _ = this;
-      particlesJS("particles-js", getConfig("banner"));
-      particlesJS("particles-js-bg", getConfig("banner", "down"));
+      particlesJS("banner-up", getConfig("banner"));
+      particlesJS("banner-down", getConfig("banner", "down"));
       _.events();
     },
     init: function() {
