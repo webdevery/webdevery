@@ -421,6 +421,9 @@ html a {
 .btn-plus-text:hover .plus-blue:before {
   transform: rotate(90deg);
 }
+[data-fixture] {
+  pointer-events: auto !important;
+}
 @keyframes bounce {
   20%,
   53%,
