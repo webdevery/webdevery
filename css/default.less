@@ -249,6 +249,12 @@ html {
     height: 42px;
     background-image: url(../images/str-down.svg);
   }
+  &-check {
+    .def;
+    width:37px;
+    height: 37px;
+    background-image: url(../images/check.svg);
+  }
   &-str-r-white {
     .def;
     width: 25px;
@@ -386,6 +392,22 @@ html {
           transform: rotate(90deg);
         }
       }
+    }
+  }
+}
+.pos-img{
+  position: relative;
+  overflow: hidden;
+  img{
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%,-50%) !important;
+    width: auto !important;
+    height: 100% !important;
+    &.height-auto{
+      height: auto !important;
+      width: 100% !important;
     }
   }
 }

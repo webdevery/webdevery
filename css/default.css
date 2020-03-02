@@ -246,6 +246,15 @@ html a {
   height: 42px;
   background-image: url(../images/str-down.svg);
 }
+.icon-check {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 37px;
+  height: 37px;
+  background-image: url(../images/check.svg);
+}
 .icon-str-r-white {
   display: inline-block;
   background-size: contain;
@@ -420,6 +429,22 @@ html a {
 }
 .btn-plus-text:hover .plus-blue:before {
   transform: rotate(90deg);
+}
+.pos-img {
+  position: relative;
+  overflow: hidden;
+}
+.pos-img img {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: auto !important;
+  height: 100% !important;
+}
+.pos-img img.height-auto {
+  height: auto !important;
+  width: 100% !important;
 }
 [data-fixture] {
   pointer-events: auto !important;

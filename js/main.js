@@ -11,16 +11,16 @@ var custom = {
         $(".header").removeClass("scroll");
       }
     },
-    events:function(){
+    events: function() {
       var _ = this;
       $(document).on("scroll", function() {
         _.doing();
       });
-      $(document).on('click','.header-burger-btn',function(e){
+      $(document).on("click", ".header-burger-btn", function(e) {
         e.preventDefault();
-        $('body').toggleClass('overflow')
-        $('.header-burger').toggleClass('active')
-      })
+        $("body").toggleClass("overflow");
+        $(".header-burger").toggleClass("active");
+      });
     },
     init: function() {
       this.events();
@@ -121,7 +121,10 @@ var custom = {
     doing: function(scrollTop) {
       var top = $(".news-detail-head").offset().top;
       var paralax = (scrollTop - top) * 0.5 + 20;
-      $(".news-detail-head").css("background-position", "center " + paralax + "px");
+      $(".news-detail-head").css(
+        "background-position",
+        "center " + paralax + "px"
+      );
     },
     events: function() {
       var _ = this;
@@ -189,9 +192,17 @@ var custom = {
           delete window.pJSDom[window.pJSDom.length - 1];
           delete window.pJSDom[window.pJSDom.length - 1];
         }
-        if($(window).width()>950){
-          particlesJS("modal-canvas-down", getConfig("modal", "down"));
-          particlesJS("modal-canvas-up", getConfig("modal"));
+        if ($(window).width() > 950) {
+          if ($(this).attr("href") == "#success") {
+            particlesJS(
+              "success-modal-canvas-down",
+              getConfig("modal", "down")
+            );
+            particlesJS("success-modal-canvas-up", getConfig("modal"));
+          } else {
+            particlesJS("modal-canvas-down", getConfig("modal", "down"));
+            particlesJS("modal-canvas-up", getConfig("modal"));
+          }
         }
       });
     },
@@ -204,6 +215,123 @@ var custom = {
       });
     }
   },
+  setPosImg: {
+    each: function() {
+      $(document)
+        .find(".pos-img")
+        .each(function() {
+          var img = $(this)
+            .find("img")
+            .eq(0)[0];
+          var nwidth = img.naturalWidth;
+          var nheight = img.naturalHeight;
+
+          var k = nwidth / nheight;
+          if ($(img).height() * k < $(this).width()) {
+            $(img).addClass("height-auto");
+          }
+          if ($(img).width() / k < $(this).height()) {
+            $(img).removeClass("height-auto");
+          }
+        });
+    },
+    events: function() {
+      var _ = this;
+      $(window).resize(function() {
+        _.each();
+      });
+    },
+    init: function() {
+      this.each();
+      this.events();
+    }
+  },
+  submitsForms: {
+    events: function() {
+      var _ = this;
+      $(document).on("submit", "#callback form", function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var mail = $(this).find("input[name=mail]");
+        var errors = 0;
+        if (!mail_right(mail.val())) {
+          errors++;
+        }
+        if (errors == 0) {
+          $this.request('onSendMess', {
+            success: function(data) {
+              $this.find("input,textarea").val("");
+              $.fancybox.close();
+              setTimeout(function() {
+              $(document)
+                  .find(".js-popup[href='#success']")
+                  .click();
+              _.success();
+              }, 200);
+            }
+          });
+          //$this.submit();
+        }
+      });
+      $(document).on("submit", ".contacts form", function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var mail = $(this).find("input[name=mail]");
+        var errors = 0;
+        if (!mail_right(mail.val())) {
+          errors++;
+        }
+        if (errors == 0) {
+          $this.request('onSendMess', {
+            success: function(data) {
+              $this.find("input,textarea").val("");
+              $.fancybox.close();
+              setTimeout(function() {
+              $(document)
+                  .find(".js-popup[href='#success']")
+                  .click();
+              _.success();
+              }, 200);
+            }
+          });
+          //$this.submit();
+        }
+      });
+      $(document).on("submit", ".footer-form", function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        $this.request('onSendMess', {
+          success: function(data) {
+            $this.find("input,textarea").val("");
+            $.fancybox.close();
+            setTimeout(function() {
+            $(document)
+                .find(".js-popup[href='#success']")
+                .click();
+            _.success();
+            }, 200);
+          }
+        });
+      });
+      function mail_right(email) {
+        var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return pattern.test(String(email).toLowerCase());
+      }
+    },
+    success: function() {
+      if (window.pJSDom.length >= 4) {
+        delete window.pJSDom[window.pJSDom.length - 1];
+        delete window.pJSDom[window.pJSDom.length - 1];
+      }
+      if ($(window).width() > 950) {
+        particlesJS("success-modal-canvas-down", getConfig("modal", "down"));
+        particlesJS("success-modal-canvas-up", getConfig("modal"));
+      }
+    },
+    init: function() {
+      this.events();
+    }
+  },
   init: function() {
     this.header.init();
     if ($(".banner").length > 0) this.banner.init();
@@ -213,6 +341,8 @@ var custom = {
     if ($(".layer").length > 0) this.portfolioImgs.init();
     if ($(".doing-list").length > 0) this.doingSlider.init();
     if ($(".modal-item").length > 0) this.modal.init();
+    if ($(".pos-img").length > 0) this.setPosImg.init();
+    this.submitsForms.init();
   }
 };
 var getConfig = function(type, pos) {
