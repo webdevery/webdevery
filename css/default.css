@@ -378,6 +378,7 @@ html a {
   margin-top: 60px;
   display: inline-flex;
   align-items: center;
+  cursor: pointer;
   background: #282928;
   border: 2px solid #099acc;
   padding: 0 40px;
